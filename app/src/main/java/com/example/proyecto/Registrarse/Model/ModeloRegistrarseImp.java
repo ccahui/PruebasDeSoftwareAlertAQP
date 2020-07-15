@@ -15,9 +15,9 @@ import androidx.annotation.NonNull;
 
 public class ModeloRegistrarseImp implements ModelRegistrarse {
 
-    private ListenerRegistrarse listenerRegistrarse;
-    private FirebaseAuth mAuth;
-    private DatabaseReference myRef;
+    private final ListenerRegistrarse listenerRegistrarse;
+    private final FirebaseAuth mAuth;
+    private final DatabaseReference myRef;
 
     public ModeloRegistrarseImp(ListenerRegistrarse listenerRegistrarse) {
         this.listenerRegistrarse = listenerRegistrarse;
