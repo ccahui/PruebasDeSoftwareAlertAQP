@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.proyecto.Login.View.IniciarSesion;
 import com.example.proyecto.MainActivity;
 import com.example.proyecto.R;
 import com.example.proyecto.Registrarse.Presenter.PresenterRegistrarse;
@@ -31,15 +30,15 @@ public class Registrarse extends AppCompatActivity implements View.OnClickListen
         this.setTitle(R.string.title_registrarse);
 
 
-       nombre = (EditText) findViewById(R.id.inputNombres);
-       apellido = (EditText)findViewById(R.id.inputApellidos);
-       email = (EditText)findViewById(R.id.inputEmail);
-       password = (EditText)findViewById(R.id.inputPassword);
+       nombre = findViewById(R.id.inputNombres);
+       apellido = findViewById(R.id.inputApellidos);
+       email = findViewById(R.id.inputEmail);
+       password = findViewById(R.id.inputPassword);
         progressBar = findViewById(R.id.progressBarRegistrarse);
         presenter = new PresenterRegistrarseImp(this);
 
-       Button registrarse = (Button)findViewById(R.id.btnRegistrarse);
-       TextView ir_a_login = (TextView)findViewById(R.id.ir_a_login);
+       Button registrarse = findViewById(R.id.btnRegistrarse);
+       TextView ir_a_login = findViewById(R.id.ir_a_login);
         ir_a_login.setOnClickListener(this);
         registrarse.setOnClickListener(this);
 
@@ -119,7 +118,7 @@ public class Registrarse extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void redirecToHome() {
-        toastShow("REGISTRO EXITO");
+        toastShow("Usuario registrado Exitosamente");
         startActivity(new Intent(Registrarse.this, MainActivity.class));
         finish();
     }

@@ -14,7 +14,7 @@ import com.example.proyecto.Model.Alerta;
 import java.util.ArrayList;
 
 public class AlertasAdapter extends RecyclerView.Adapter<AlertasAdapter.Alertasviewholder> {
-    ArrayList<Alerta> alertas;
+    final ArrayList<Alerta> alertas;
 
     public AlertasAdapter(ArrayList<Alerta> alertas) {
         this.alertas = alertas;
@@ -43,12 +43,12 @@ public class AlertasAdapter extends RecyclerView.Adapter<AlertasAdapter.Alertasv
         return alertas.size();
     }
 
-    public class Alertasviewholder extends RecyclerView.ViewHolder {
-        TextView textView_tipo;
-        TextView textView_nombre;
-        TextView textView_apellido;
-        TextView textView_ubicacion;
-        ImageView imageView_tipo;
+    static class Alertasviewholder extends RecyclerView.ViewHolder {
+        final TextView textView_tipo;
+        final TextView textView_nombre;
+        final TextView textView_apellido;
+        final TextView textView_ubicacion;
+        final ImageView imageView_tipo;
 
         public Alertasviewholder(View view) {
             super(view);

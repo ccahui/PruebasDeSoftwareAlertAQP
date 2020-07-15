@@ -31,14 +31,14 @@ public class IniciarSesion extends AppCompatActivity implements View.OnClickList
 
         this.setTitle(R.string.title_login);
 
-        email = (EditText) findViewById(R.id.editTextEmail);
-        password = (EditText) findViewById(R.id.editTextPassword);
+        email = findViewById(R.id.editTextEmail);
+        password = findViewById(R.id.editTextPassword);
         progressBar = findViewById(R.id.progressBarIniciarSesion);
 
         presenterLogin = new PresenterLoginImp(this);
 
-        TextView registrarse = (TextView) findViewById(R.id.registrar);
-        Button login = (Button) findViewById(R.id.button_login);
+        TextView registrarse = findViewById(R.id.registrar);
+        Button login = findViewById(R.id.button_login);
         login.setOnClickListener(this);
         registrarse.setOnClickListener(this);
 

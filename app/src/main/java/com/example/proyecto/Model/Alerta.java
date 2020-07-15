@@ -11,12 +11,11 @@ public class Alerta {
     private Drawable imagen_tipo;
 
     public Alerta(String tipo, String nombres, String apellidos, String ubicacion, Drawable imagen_tipo ) {
-        this.tipo = tipo;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.ubicacion = ubicacion;
-        this.imagen_tipo = imagen_tipo;
-
+        setTipo(tipo);
+        setNombres(nombres);
+        setApellidos(apellidos);
+        setUbicacion(ubicacion);
+        setImagen_tipo(imagen_tipo);
     }
 
     public Drawable getImagen_tipo() {
