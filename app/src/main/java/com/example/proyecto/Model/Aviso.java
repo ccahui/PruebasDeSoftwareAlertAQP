@@ -9,6 +9,7 @@ public class Aviso {
     private String mImageUrl;
 
 
+    public Aviso(){}
     public Aviso(String mImageUrl, String nombre, String apellido, String descripcion, String telefono) {
         setmImageUrl(mImageUrl);
         setNombre(nombre);

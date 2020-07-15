@@ -81,7 +81,7 @@ public class PresenterRegistrarseImp implements PresenterRegistrarse, ListenerRe
             valido = false;
         }
         else if (password.length()< 6) {
-            vista.setPassworError("password > 6");
+            vista.setPassworError("Minimo 6 caracteres");
             valido = false;
         }
         return valido;

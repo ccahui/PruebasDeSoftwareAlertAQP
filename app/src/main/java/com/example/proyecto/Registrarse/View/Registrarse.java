@@ -118,7 +118,7 @@ public class Registrarse extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void redirecToHome() {
-        toastShow("REGISTRO EXITO");
+        toastShow("Usuario registrado Exitosamente");
         startActivity(new Intent(Registrarse.this, MainActivity.class));
         finish();
     }
