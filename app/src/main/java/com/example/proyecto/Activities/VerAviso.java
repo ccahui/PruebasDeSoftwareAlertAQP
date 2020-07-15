@@ -1,9 +1,6 @@
 package com.example.proyecto.Activities;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -11,7 +8,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,21 +27,8 @@ public class VerAviso extends AppCompatActivity implements AvisosAdapter.OnItemC
 
     private RecyclerView mRecyclerView;
     private AvisosAdapter mAdapter;
-
     private ProgressBar mProgressCircle;
-
-    private DatabaseReference mDatabaseRef;
     private List<Aviso> mAvisos;
-
-   /* String textView_nombre_aviso;
-    String textView_apellido_aviso;
-    String textView_descripcion_aviso;
-    String textView_telefono;*/
-    //String imageView_foto;
-
-    //private FirebaseDatabase firebaseDatabase;
-
-    //private StorageReference mStorageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +42,7 @@ public class VerAviso extends AppCompatActivity implements AvisosAdapter.OnItemC
 
         mAvisos = new ArrayList<>();
 
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("datos_aviso");
+        DatabaseReference   mDatabaseRef = FirebaseDatabase.getInstance().getReference("datos_aviso");
         mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

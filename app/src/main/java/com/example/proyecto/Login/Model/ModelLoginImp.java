@@ -9,8 +9,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import androidx.annotation.NonNull;
 
 public class ModelLoginImp implements ModelLogin {
-    private ListenerLogin listenerLogin;
-    private FirebaseAuth mAuth;
+    private final ListenerLogin listenerLogin;
+    private final FirebaseAuth mAuth;
 
     public ModelLoginImp(ListenerLogin listenerLogin) {
         this.listenerLogin = listenerLogin;

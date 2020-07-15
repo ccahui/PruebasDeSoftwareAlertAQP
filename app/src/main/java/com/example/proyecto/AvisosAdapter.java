@@ -15,14 +15,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.proyecto.Model.Aviso;
-import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AvisosAdapter extends RecyclerView.Adapter<AvisosAdapter.Avisosviewholder> {
-    private Context mContext;
-    private List<Aviso> aviso;
+    private final Context mContext;
+    private final List<Aviso> aviso;
     private OnItemClickListener mListener;
 
     public AvisosAdapter(Context context, List<Aviso> avisos) {
@@ -37,10 +35,7 @@ public class AvisosAdapter extends RecyclerView.Adapter<AvisosAdapter.Avisosview
         return new Avisosviewholder(v);
     }
 
-    /**
-     * @param holder
-     * @param position
-     */
+
     @Override
     public void onBindViewHolder(@NonNull AvisosAdapter.Avisosviewholder holder, int position) {
         holder.textView_nombre_aviso.setText(aviso.get(position).getNombre());
@@ -66,9 +61,9 @@ public class AvisosAdapter extends RecyclerView.Adapter<AvisosAdapter.Avisosview
 
     public class Avisosviewholder extends RecyclerView.ViewHolder  implements View.OnClickListener,
             View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
-        public ImageView imageView;
-        public TextView textView_nombre_aviso;
-        public TextView textView_apellido_aviso;
+        public final ImageView imageView;
+        public final TextView textView_nombre_aviso;
+        public final TextView textView_apellido_aviso;
         //public TextView textView_descripcion_aviso;
 
         public Avisosviewholder(View view) {

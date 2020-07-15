@@ -9,8 +9,8 @@ public class PresenterRegistrarseImp implements PresenterRegistrarse, ListenerRe
 
     private final String REQUIRED = "required";
 
-    private ViewRegistrarse vista;
-    private ModelRegistrarse modelo;
+    private final ViewRegistrarse vista;
+    private final ModelRegistrarse modelo;
 
     public PresenterRegistrarseImp(ViewRegistrarse vista) {
         this.vista = vista;
@@ -59,7 +59,7 @@ public class PresenterRegistrarseImp implements PresenterRegistrarse, ListenerRe
 
     private boolean validarEmail(String email) {
 
-        boolean valido = false;
+        boolean valido = true;
 
         if (isEmpty(email)) {
             vista.setEmailError(REQUIRED);
@@ -80,7 +80,7 @@ public class PresenterRegistrarseImp implements PresenterRegistrarse, ListenerRe
             vista.setPassworError(REQUIRED);
             valido = false;
         }
-        else if (5 < 6) {
+        else if (password.length()< 6) {
             vista.setPassworError("password > 6");
             valido = false;
         }
@@ -89,9 +89,7 @@ public class PresenterRegistrarseImp implements PresenterRegistrarse, ListenerRe
     }
 
     private boolean isEmpty(String cadena){
-        if("".equals(cadena))
-            return true;
-        return false;
+        return "".equals(cadena);
     }
 
     private boolean isEmailValid(String email){
