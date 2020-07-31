@@ -1,9 +1,11 @@
 package com.example.proyecto.Login.Presenter;
 
 import android.util.Patterns;
+
 import com.example.proyecto.Login.Model.ModelLogin;
 import com.example.proyecto.Login.Model.ModelLoginImp;
 import com.example.proyecto.Login.View.ViewLogin;
+import com.example.proyecto.Util;
 
 public class PresenterLoginImp implements PresenterLogin, ListenerLogin {
 
@@ -32,50 +34,46 @@ public class PresenterLoginImp implements PresenterLogin, ListenerLogin {
 
     @Override
     public void login(String email, String password) {
-        if(validarEmailAndPassword(email, password)){
+        if (validarEmailAndPassword(email, password)) {
             vista.mostrarProgressBar();
             modelo.login(email, password);
         }
     }
 
 
-    private boolean validarEmailAndPassword(String email, String password) {
-        return validarEmail(email) & validarPassword(password);
+    public boolean validarEmailAndPassword(String email, String password) {
+        return validarEmailVista(email) & validarPasswordVista(password);
     }
 
-    private boolean validarEmail(String email) {
+    public boolean validarEmailVista(String email) {
         boolean valido = true;
+        if (!Util.validarEmail(email)) {
+            if (Util.validarIsCampoVacio(email)) {
+                vista.setEmailError(REQUIRED);
+                valido = false;
+            } else if (!Util.isEmailValid(email)) {
+                vista.setEmailError("email no valido");
+                valido = false;
+            }
+        }
+        return valido;
 
-        if (isEmpty(email)) {
-            vista.setEmailError(REQUIRED);
-            valido = false;
-        } else if (! isEmailValid(email)) {
-            vista.setEmailError("email no valido");
-            valido = false;
+    }
+    public boolean validarPasswordVista(String password) {
+        boolean valido = true;
+        if (!Util.validarPassword(password)) {
+            if (Util.validarIsCampoVacio(password)) {
+                vista.setPassworError(REQUIRED);
+                valido = false;
+            } else if (password.length() < 6) {
+                vista.setPassworError("password > 6");
+                valido = false;
+            }
         }
         return valido;
     }
 
-    private boolean validarPassword(String password) {
-        boolean valido = true;
 
-        if (isEmpty(password)) {
-            vista.setPassworError(REQUIRED);
-            valido = false;
-        } else if (password.length() < 6) {
-            vista.setPassworError("password > 6");
-            valido = false;
-        }
-        return valido;
-    }
-
-    private boolean isEmpty(String cadena){
-        return ("".equals(cadena));
-    }
-
-    private boolean isEmailValid(String email){
-        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
-    }
 
 }
 
