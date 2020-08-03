@@ -49,10 +49,23 @@ public class PresenterLoginImp implements PresenterLogin, ListenerLogin {
         boolean valido = true;
         if (!Util.validarEmail(email)) {
             if (Util.validarIsCampoVacio(email)) {
-                vista.setEmailError(REQUIRED);
+               vista.setEmailError(REQUIRED);
                 valido = false;
             } else if (!Util.isEmailValid(email)) {
                 vista.setEmailError("email no valido");
+                valido = false;
+            }
+        }
+        return valido;
+
+    }
+
+    public boolean validarEmail(String email) {
+        boolean valido = true;
+        if (!Util.validarEmail(email)) {
+            if (Util.validarIsCampoVacio(email)) {
+                valido = false;
+            } else if (!Util.isEmailValid(email)) {
                 valido = false;
             }
         }
