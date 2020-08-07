@@ -2,7 +2,7 @@ package com.example.proyecto.Registrarse.Model;
 
 import android.util.Log;
 
-import com.example.proyecto.Registrarse.Presenter.ListenerRegistrarse;
+import com.example.proyecto.Registrarse.Presenter.PresenterModelRegistrarse;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -18,11 +18,11 @@ import androidx.annotation.NonNull;
 
 public class ModeloRegistrarseImp implements ModelRegistrarse {
 
-    private final ListenerRegistrarse listenerRegistrarse;
+    private final PresenterModelRegistrarse listenerRegistrarse;
     private final FirebaseAuth mAuth;
     private final DatabaseReference myRef;
 
-    public ModeloRegistrarseImp(ListenerRegistrarse listenerRegistrarse) {
+    public ModeloRegistrarseImp(PresenterModelRegistrarse listenerRegistrarse) {
         this.listenerRegistrarse = listenerRegistrarse;
         mAuth = FirebaseAuth.getInstance();
         myRef = FirebaseDatabase.getInstance().getReference();

@@ -1,6 +1,6 @@
 package com.example.proyecto.Login.Model;
 
-import com.example.proyecto.Login.Presenter.ListenerLogin;
+import com.example.proyecto.Login.Presenter.PresenterModelLogin;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -9,10 +9,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import androidx.annotation.NonNull;
 
 public class ModelLoginImp implements ModelLogin {
-    private final ListenerLogin listenerLogin;
+    private final PresenterModelLogin listenerLogin;
     private final FirebaseAuth mAuth;
 
-    public ModelLoginImp(ListenerLogin listenerLogin) {
+    public ModelLoginImp(PresenterModelLogin listenerLogin) {
         this.listenerLogin = listenerLogin;
         mAuth = FirebaseAuth.getInstance();
     }

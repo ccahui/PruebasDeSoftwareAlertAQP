@@ -1,13 +1,11 @@
 package com.example.proyecto.Login.Presenter;
 
-import android.util.Patterns;
-
 import com.example.proyecto.Login.Model.ModelLogin;
 import com.example.proyecto.Login.Model.ModelLoginImp;
 import com.example.proyecto.Login.View.ViewLogin;
 import com.example.proyecto.Util;
 
-public class PresenterLoginImp implements PresenterLogin, ListenerLogin {
+public class PresenterLoginImp implements PresenterViewLogin, PresenterModelLogin {
 
     private final String REQUIRED = "required";
 
@@ -18,6 +16,11 @@ public class PresenterLoginImp implements PresenterLogin, ListenerLogin {
     public PresenterLoginImp(ViewLogin vista) {
         this.vista = vista;
         modelo = new ModelLoginImp(this);
+    }
+
+    public PresenterLoginImp(ViewLogin vista, ModelLogin model) {
+        this.vista = vista;
+        this.modelo = model;
     }
 
     @Override
@@ -79,7 +82,7 @@ public class PresenterLoginImp implements PresenterLogin, ListenerLogin {
                 vista.setPassworError(REQUIRED);
                 valido = false;
             } else if (password.length() < 6) {
-                vista.setPassworError("password > 6");
+                vista.setPassworError("Minimo 6 caracteres");
                 valido = false;
             }
         }

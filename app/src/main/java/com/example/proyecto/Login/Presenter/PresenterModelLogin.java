@@ -1,6 +1,6 @@
 package com.example.proyecto.Login.Presenter;
 
-public interface ListenerLogin {
+public interface PresenterModelLogin {
 
     public void onSuccess();
     public void onError(String error);

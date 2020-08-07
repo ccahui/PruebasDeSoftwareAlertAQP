@@ -49,7 +49,7 @@ public class GenerarAlerta extends AppCompatActivity {
     Button buttonAlert;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-    ProgressBar progressBar;
+    //ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +65,7 @@ public class GenerarAlerta extends AppCompatActivity {
         buttonAlert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar = findViewById(R.id.progress_generaralerta);
+      //          progressBar = findViewById(R.id.progress_generaralerta);
                 if (editTextNombres.getText().toString().equals("") || editTextApellidos.getText().toString().equals("")) {
                     validacion();
                 }else{
@@ -79,7 +79,7 @@ public class GenerarAlerta extends AppCompatActivity {
                     databaseReference.child("Alertas").child(UUID.randomUUID().toString()).setValue(map);
                     limpiarcajas();
                     Toast.makeText(GenerarAlerta.this, "ALERTA ENVIADA", Toast.LENGTH_SHORT).show();
-                    progressBar.setVisibility(v.INVISIBLE);
+        //            progressBar.setVisibility(v.INVISIBLE);
                     Intent intent = new Intent(GenerarAlerta.this, MainActivity.class);
                     startActivity(intent);
                 }

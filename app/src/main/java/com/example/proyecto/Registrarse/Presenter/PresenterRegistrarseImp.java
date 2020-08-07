@@ -1,18 +1,24 @@
 package com.example.proyecto.Registrarse.Presenter;
 
-import android.util.Patterns;
+import android.util.Log;
+
 import com.example.proyecto.Registrarse.Model.ModelRegistrarse;
 import com.example.proyecto.Registrarse.Model.ModeloRegistrarseImp;
 import com.example.proyecto.Registrarse.View.ViewRegistrarse;
 import com.example.proyecto.Util;
+import com.google.android.gms.maps.model.LatLng;
 
-public class PresenterRegistrarseImp implements PresenterRegistrarse, ListenerRegistrarse {
+public class PresenterRegistrarseImp implements PresenterViewRegistrarse, PresenterModelRegistrarse {
 
     private final String REQUIRED = "required";
 
     private final ViewRegistrarse vista;
     private final ModelRegistrarse modelo;
 
+    public PresenterRegistrarseImp(ViewRegistrarse vista, ModelRegistrarse model) {
+        this.vista = vista;
+        this.modelo = model;
+    }
     public PresenterRegistrarseImp(ViewRegistrarse vista) {
         this.vista = vista;
         modelo = new ModeloRegistrarseImp(this);
@@ -43,12 +49,13 @@ public class PresenterRegistrarseImp implements PresenterRegistrarse, ListenerRe
     }
 
     private boolean validarNombreVista(String nombre){
-       if(Util.validarIsCampoVacio(nombre)){
+        if(Util.validarIsCampoVacio(nombre)){
             vista.setNombreError(REQUIRED);
             return false;
         }
         return true;
     }
+
 
     private boolean validarApellidoVista(String apellido){
         if(Util.validarIsCampoVacio(apellido)){

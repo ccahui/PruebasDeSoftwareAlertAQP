@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.proyecto.MainActivity;
 import com.example.proyecto.R;
-import com.example.proyecto.Registrarse.Presenter.PresenterRegistrarse;
+import com.example.proyecto.Registrarse.Presenter.PresenterViewRegistrarse;
 import com.example.proyecto.Registrarse.Presenter.PresenterRegistrarseImp;
 
 
@@ -20,7 +20,7 @@ public class Registrarse extends AppCompatActivity implements View.OnClickListen
 
     private EditText nombre, apellido, email, password;
     private ProgressBar progressBar;
-    private PresenterRegistrarse presenter;
+    private PresenterViewRegistrarse presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

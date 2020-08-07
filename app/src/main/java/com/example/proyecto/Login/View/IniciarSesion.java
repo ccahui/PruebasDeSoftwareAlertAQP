@@ -11,7 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.proyecto.Login.Presenter.PresenterLogin;
+import com.example.proyecto.Login.Presenter.PresenterViewLogin;
 import com.example.proyecto.Login.Presenter.PresenterLoginImp;
 import com.example.proyecto.MainActivity;
 import com.example.proyecto.R;
@@ -22,7 +22,7 @@ public class IniciarSesion extends AppCompatActivity implements View.OnClickList
 
     private EditText email, password;
     private ProgressBar progressBar;
-    private PresenterLogin presenterLogin;
+    private PresenterViewLogin presenterLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

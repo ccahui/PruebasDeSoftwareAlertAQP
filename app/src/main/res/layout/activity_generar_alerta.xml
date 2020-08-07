@@ -79,9 +79,5 @@
         android:backgroundTint="@color/colorButton"
         android:textSize="20dp" />
 
-    <ProgressBar
-        android:id="@+id/progress_generaralerta"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
 </LinearLayout>
