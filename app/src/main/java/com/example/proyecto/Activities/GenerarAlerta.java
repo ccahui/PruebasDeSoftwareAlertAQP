@@ -35,14 +35,14 @@ import java.util.UUID;
 
 public class GenerarAlerta extends AppCompatActivity {
 
-    EditText editTextNombres;
-    EditText editTextApellidos;
-    TextView mensaje1;
-    TextView mensaje2;
-    String latitud,longitud;
-    Button buttonAlert;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
+    private EditText editTextNombres;
+    private EditText editTextApellidos;
+    private TextView mensaje1;
+    private TextView mensaje2;
+    private String latitud,longitud;
+    private Button buttonAlert;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
     //ProgressBar progressBar;
 
     @Override
