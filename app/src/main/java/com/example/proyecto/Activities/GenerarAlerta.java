@@ -16,21 +16,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-
 import com.example.proyecto.MainActivity;
 import com.example.proyecto.R;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -69,7 +63,7 @@ public class GenerarAlerta extends AppCompatActivity {
                 if (editTextNombres.getText().toString().equals("") || editTextApellidos.getText().toString().equals("")) {
                     validacion();
                 }else{
-                    Map<String,String> map= new HashMap<String,String>();
+                    Map<String,String> map= new HashMap<>();
                     map.put("Tipo",tipo);
                     map.put("Nombre",editTextNombres.getText().toString());
                     map.put("Apellido",editTextApellidos.getText().toString());
