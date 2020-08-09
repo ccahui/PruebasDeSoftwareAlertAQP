@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
+
 public class PublicarAviso extends AppCompatActivity {
     private static final int RC_GET_IMG = 0;
     private static final int RC_ACCESS = 1;

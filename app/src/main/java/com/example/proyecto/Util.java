@@ -1,6 +1,5 @@
 package com.example.proyecto;
 
-import android.util.Patterns;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -36,7 +35,7 @@ public class Util {
                 "[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,4})$";
         Pattern pattern = Pattern.compile(emailPattern);
         Matcher matcher = pattern.matcher(email);
-       return matcher.matches();
+        return matcher.matches();
     }
 
 

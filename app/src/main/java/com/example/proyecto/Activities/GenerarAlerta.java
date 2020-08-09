@@ -92,7 +92,7 @@ public class GenerarAlerta extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference();
     }
 
-    private void validacion() {
+    public void validacion() {
         String nom = editTextNombres.getText().toString();
         String ape = editTextApellidos.getText().toString();
         if (nom.equals(""))
