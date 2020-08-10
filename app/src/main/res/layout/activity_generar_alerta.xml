@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
         android:ems="10"
-        android:hint="NOMBRES"
+        android:hint="TITULO"
         android:inputType="textPersonName"
         android:textAlignment="center" />
 
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextNombres"
         android:ems="10"
-        android:hint="APELLIDOS"
+        android:hint="DESCRIPCION"
         android:inputType="textPersonName"
         android:textAlignment="center" />
 
