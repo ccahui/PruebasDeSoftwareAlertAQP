@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 
 public class AlertasUnitTest {
-
+    /*PU-011*/
     @Test
     public void validar_titulo_isCorrect(){
         String titulo = "esto es un título";
@@ -28,7 +28,7 @@ public class AlertasUnitTest {
         assertEquals(valorObtenido, valorEsperado);
     }
 
-
+    /*PU-012*/
     @Test
     public void validar_descripcion_isCorrect(){
         String descripcion = "alerta generada por un usuario";

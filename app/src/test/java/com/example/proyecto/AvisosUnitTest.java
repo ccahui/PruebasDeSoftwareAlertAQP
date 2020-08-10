@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class AvisosUnitTest {
+    /*PU-013*/
     @Test
     public void validar_nombre_isCorrect(){
         String nombre = "Raul";
@@ -24,7 +25,7 @@ public class AvisosUnitTest {
 
         assertEquals(valorObtenido, valorEsperado);
     }
-
+    /*PU-014*/
     @Test
     public void validar_apellido_isCorrect(){
         String apellido = "esto es un apellido";
@@ -44,7 +45,7 @@ public class AvisosUnitTest {
 
         assertEquals(valorObtenido, valorEsperado);
     }
-
+    /*PU-015*/
     @Test
     public void validar_numeroCel_isCorrect(){
         int numeroCel = 938473811;
@@ -64,7 +65,7 @@ public class AvisosUnitTest {
 
         assertEquals(valorObtenido, valorEsperado);
     }
-
+    /*PU-016*/
     @Test
     public void validar_descripcionA_isCorrect(){
         String descripcion = "Persona de estatura alta, contextura delgada.";
